@@ -5,9 +5,16 @@ pipeline {
             steps {
                 echo "Pipeline job with Jenkinsfile"
                 sh 'echo using shell within Jenkinsfile'
-                sh 'java Hello.java'
-                sh 'javac Hello'
+                sh 'javac Hello.java'
                 echo 'not using shell in the Jenkinsfile'
+            }
+        }
+        stage('run') {
+            steps {
+                echo "Pipeline job with Jenkinsfile"
+                sh 'echo Running java file'
+                sh 'java Hello'
+                echo 'Java file run successfully!!!'
             }
         }
     }
